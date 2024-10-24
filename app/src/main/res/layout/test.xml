@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="211dp"
+        android:layout_height="43dp"
+        android:text="Search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="59dp" />
+
+    <Button
+        android:id="@+id/searchBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="btnSearchPressed"
+        android:text="Search"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        tools:layout_editor_absoluteX="146dp" />
+
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnDeletePressed"
+
+        android:text="Delete"
+
+        app:layout_constraintTop_toBottomOf="@+id/idInput"
+        tools:layout_editor_absoluteX="146dp" />
+
+    <EditText
+        android:id="@+id/idInput"
+        android:layout_width="206dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="112dp"
+        android:text="ID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchBtn" />
+
+    <Button
+        android:id="@+id/deleteAllBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+
+        android:onClick="btnDeleteAllPressed"
+
+        android:text="DeleteAll"
+        app:layout_constraintTop_toBottomOf="@+id/deleteBtn"
+        tools:layout_editor_absoluteX="133dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

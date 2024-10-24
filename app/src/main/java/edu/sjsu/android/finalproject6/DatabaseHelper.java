@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,14 +36,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "%s TEXT NOT NULL, " +
                 "%s TEXT NOT NULL);", TABLE_ACCOUNT, ID, ACCOUNT_NAME, USERNAME, ACCOUNT_PASSWORD);
         sqLiteDatabase.execSQL(createAccountTable);
+
+
+        Log.d("DatabaseHelper", "onCreate called - creating database");
+        populateData(sqLiteDatabase);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
+        Log.d("DatabaseHelper", "onUpgrade called - upgrading database");
+
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_ACCOUNT);
         onCreate(sqLiteDatabase);
     }
 
+
+    public  void populateData(SQLiteDatabase sqLiteDatabase) {
+        ContentValues values = new ContentValues();
+
+        values.put(ACCOUNT_NAME, "Google");
+        values.put(USERNAME, "test1");
+        values.put(ACCOUNT_PASSWORD, "password");
+        sqLiteDatabase.insert(TABLE_ACCOUNT, null, values);
+
+        values.put(ACCOUNT_NAME, "Microsoft");
+        values.put(USERNAME, "test2");
+        values.put(ACCOUNT_PASSWORD, "password");
+        sqLiteDatabase.insert(TABLE_ACCOUNT, null, values);
+
+        values.put(ACCOUNT_NAME, "Linkedin");
+        values.put(USERNAME, "test3");
+        values.put(ACCOUNT_PASSWORD, "password");
+        sqLiteDatabase.insert(TABLE_ACCOUNT, null, values);
+    }
 
     public void deleteAccount(Account account) {
         SQLiteDatabase database = getWritableDatabase();
@@ -88,5 +114,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return accountList;
     }
+
+
 
 }
