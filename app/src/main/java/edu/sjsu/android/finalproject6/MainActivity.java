@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_main);
         setContentView(R.layout.test);
 
+        // delete database the old database when run app
+        deleteDatabase("Accounts");
 
         searchText = (EditText) findViewById(R.id.search);
         idInput = (EditText) findViewById(R.id.idInput);
