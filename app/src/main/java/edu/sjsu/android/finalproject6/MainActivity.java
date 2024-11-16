@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         idInput = (EditText) findViewById(R.id.idInput);
         searchText = (EditText) findViewById(R.id.search);
         db = new DatabaseHelper(this);
+
     }
     public void btnAddPressed(View v){
         Account temp = new Account(username.getText().toString(), accountName.getText().toString(), password.getText().toString());
