@@ -42,10 +42,10 @@ public class DetailFragment extends Fragment {
         //View view = inflater.inflate(R.layout.fragment_detail, container, false);
         FragmentDetailBinding binding = FragmentDetailBinding.inflate(inflater);
 
-        binding.email.setText(account.getEmailID());
-        binding.name.setText(account.getNameID());
-        binding.phone.setText(account.getPhoneID());
-        binding.password.setText(account.getPasswordID());
+//        binding.email.setText(account.getEmailID());
+//        binding.name.setText(account.getNameID());
+//        binding.phone.setText(account.getPhoneID());
+//        binding.password.setText(account.getPasswordID());
         //binding.details.setMovementMethod();
 
         binding.editBtn.setOnClickListener(this::goEdit);

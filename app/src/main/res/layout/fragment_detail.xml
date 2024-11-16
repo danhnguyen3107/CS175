@@ -18,12 +18,12 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/displayEmail"
+            android:id="@+id/displayAccountName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
-            android:text="@string/email"
+            android:text="@string/accountName"
             android:textSize="20sp"/>
 
             <TextView
@@ -63,32 +63,6 @@
                 />
     </LinearLayout>
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/displayPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:scrollbars="vertical"
-            android:text="@string/phone"
-            android:textSize="20sp"
-            />
-            <TextView
-                android:id="@+id/phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:scrollbars="vertical"
-                android:text="@string/hello_blank_fragment"
-                android:textSize="20sp"
-                />
-    </LinearLayout>
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

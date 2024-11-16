@@ -30,8 +30,8 @@ public class ListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         accountList = new ArrayList<>();
-        accountList.add(new Account(R.string.a1_email, R.string.a1_name,R.string.a1_phone, R.string.a1_password));
-        accountList.add(new Account(R.string.a2_email, R.string.a2_name, R.string.a2_phone, R.string.a2_password));
+//        accountList.add(new Account(R.string.a1_email, R.string.a1_name,R.string.a1_phone, R.string.a1_password));
+//        accountList.add(new Account(R.string.a2_email, R.string.a2_name, R.string.a2_phone, R.string.a2_password));
     }
 
     @Override

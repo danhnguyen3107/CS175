@@ -24,14 +24,14 @@
     <string name="edit_account">Edit Account</string>
     <string name="save_changes">Save Changes</string>
 
-    <string name="enter_email">Enter email: </string>
+    <string name="enter_accountName">Enter Account Name: </string>
     <string name="enter_name">Enter username: </string>
     <string name="enter_phone_number">Enter phone number: </string>
     <string name="create_account">Add Account</string>
     <string name="enter_password">Enter password: </string>
     <string name="enter_new_password">Enter new password: </string>
     <string name="add_account">Add Account</string>
-    <string name="email">Email: </string>
+    <string name="accountName">Account Name: </string>
     <string name="username">Username: </string>
     <string name="phone">Phone:</string>
     <string name="password">Password:</string>

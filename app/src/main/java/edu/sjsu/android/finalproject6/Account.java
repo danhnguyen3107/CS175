@@ -6,25 +6,81 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 public class Account implements Parcelable {
-    private int emailID;
-    private int nameID;
-    private int phoneID;
-    private int passwordID;
 
-    // alt + enter (option + enter on Mac) for faster setup
+    private int id;
+    private String username;
+    private String accountName;
+    private String accountPassword;
 
-    public Account(int imageID, int nameID, int phoneID, int passwordID) {
-        this.emailID = imageID;
-        this.nameID = nameID;
-        this.phoneID = phoneID;
-        this.passwordID = passwordID;
+    public Account() {
+
     }
 
+    public Account(int id, String username, String accountName, String accountPassword) {
+        this.id = id;
+        this.username = username;
+        this.accountName = accountName;
+        this.accountPassword = accountPassword;
+    }
+
+    public Account(String username, String accountName, String accountPassword) {
+        this.username = username;
+        this.accountName = accountName;
+        this.accountPassword = accountPassword;
+    }
     protected Account(Parcel in) {
-        emailID = in.readInt();
-        nameID = in.readInt();
-        phoneID = in.readInt();
-        passwordID = in.readInt();
+        this.id = in.readInt();
+        this.accountName = in.readString();
+        this.username = in.readString();
+        this.accountPassword  = in.readString();
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public String getUsername() {
+        return this.username;
+    }
+
+    public String getAccountName() {
+        return this.accountName;
+    }
+
+
+    public String getAccountPassword() {
+        return this.accountPassword;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+
+    public void setAccountPassword(String accountPassword) {
+        this.accountPassword = accountPassword;
+    }
+
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(accountName);
+        dest.writeString(username);
+        dest.writeString(accountPassword);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<Account> CREATOR = new Creator<Account>() {
@@ -39,29 +95,11 @@ public class Account implements Parcelable {
         }
     };
 
-    public int getEmailID() {
-        return emailID;
-    }
-    public int getNameID() {
-        return nameID;
-    }
-    public int getPhoneID() {
-        return phoneID;
-    }
-    public int getPasswordID() {
-        return passwordID;
-    }
-
+    @NonNull
     @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(@NonNull Parcel parcel, int i) {
-        parcel.writeInt(emailID);
-        parcel.writeInt(nameID);
-        parcel.writeInt(phoneID);
-        parcel.writeInt(passwordID);
+    public String toString() {
+        return "id: " + id + ", AccountName: " + accountName + ", Username: " + username + ", accountPassword: " + accountPassword + "\n";
     }
 }
+
+

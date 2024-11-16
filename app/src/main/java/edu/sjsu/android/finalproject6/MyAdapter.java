@@ -35,8 +35,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         //holder.mIdView.setText(mValues.get(position).id);
         //holder.mContentView.setText(mValues.get(position).content);
         Account account = accountList.get(position);
-        holder.nameView.setText(account.getNameID());
-        holder.phoneView.setText(account.getPhoneID());
+//        holder.nameView.setText(account.getNameID());
+//        holder.phoneView.setText(account.getPhoneID());
     }
 
     @Override
@@ -50,8 +50,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         public ViewHolder(RowLayoutBinding binding, OnAccountClickedListener listener) {
             super(binding.getRoot());
-            nameView = binding.name;
-            phoneView = binding.phone;
+            nameView = binding.accountName;
+            phoneView = binding.username;
             binding.getRoot().setOnClickListener(v -> listener.onClick(getLayoutPosition()));
         }
     }
