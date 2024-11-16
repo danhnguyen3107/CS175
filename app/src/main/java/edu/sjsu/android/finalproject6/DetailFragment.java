@@ -1,4 +1,4 @@
-package edu.sjsu.android.accman;
+package edu.sjsu.android.finalproject6;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import edu.sjsu.android.accman.databinding.FragmentDetailBinding;
+import edu.sjsu.android.finalproject6.databinding.FragmentDetailBinding;
 
 public class DetailFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package edu.sjsu.android.accman;
+package edu.sjsu.android.finalproject6;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import edu.sjsu.android.accman.databinding.FragmentDetailBinding;
+import edu.sjsu.android.finalproject6.databinding.FragmentDetailBinding;
 
 public class EditDetailFragment extends Fragment {
 

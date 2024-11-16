@@ -1,4 +1,4 @@
-package edu.sjsu.android.accman;
+package edu.sjsu.android.finalproject6;
 
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,12 +7,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
 
-import edu.sjsu.android.accman.databinding.RowLayoutBinding;
+import edu.sjsu.android.finalproject6.databinding.RowLayoutBinding;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private final List<Account> accountList;
-    private OnAccountClickedListener listener;
+    private edu.sjsu.android.finalproject6.OnAccountClickedListener listener;
 
     public MyAdapter(List<Account> items) {
         accountList = items;

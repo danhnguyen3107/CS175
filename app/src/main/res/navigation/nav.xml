@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    android:label="AccMan"
+    android:label="finalproject6"
     app:startDestination="@id/listFragment">
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="edu.sjsu.android.accman.DetailFragment"
+        android:name="edu.sjsu.android.finalproject6.DetailFragment"
 
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="my_account"
-            app:argType="edu.sjsu.android.accman.Account" />
+            app:argType="edu.sjsu.android.finalproject6.Account" />
         <action
             android:id="@+id/detail_to_editDetail"
             app:destination="@id/editDetailFragment" />
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/listFragment"
-        android:name="edu.sjsu.android.accman.ListFragment"
+        android:name="edu.sjsu.android.finalproject6.ListFragment"
 
         tools:layout="@layout/fragment_list" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/infoFragment"
-        android:name="edu.sjsu.android.accman.InfoFragment"
+        android:name="edu.sjsu.android.finalproject6.InfoFragment"
 
         tools:layout="@layout/fragment_info" />
 
@@ -41,20 +41,20 @@
         app:destination="@id/infoFragment" />
     <fragment
         android:id="@+id/editDetailFragment"
-        android:name="edu.sjsu.android.accman.EditDetailFragment"
+        android:name="edu.sjsu.android.finalproject6.EditDetailFragment"
 
         tools:layout="@layout/fragment_edit_detail"
         >
         <argument
             android:name="my_account"
-            app:argType="edu.sjsu.android.accman.Account" />
+            app:argType="edu.sjsu.android.finalproject6.Account" />
         <action
             android:id="@+id/editDetail_to_detail"
             app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/addAccountFragment"
-        android:name="edu.sjsu.android.accman.AddAccountFragment"
+        android:name="edu.sjsu.android.finalproject6.AddAccountFragment"
 
         tools:layout="@layout/fragment_add_account"
         />

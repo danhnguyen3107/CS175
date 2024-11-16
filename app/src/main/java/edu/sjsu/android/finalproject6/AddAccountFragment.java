@@ -1,4 +1,4 @@
-package edu.sjsu.android.accman;
+package edu.sjsu.android.finalproject6;
 
 import android.os.Bundle;
 

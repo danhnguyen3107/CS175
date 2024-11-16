@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.AccMan" parent="Theme.Material3.DayNight">
+    <style name="Base.Theme.FinalProject6" parent="Theme.Material3.DayNight">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.AccMan" parent="Base.Theme.AccMan" />
+    <style name="Theme.FinalProject6" parent="Base.Theme.FinalProject6" />
 </resources>

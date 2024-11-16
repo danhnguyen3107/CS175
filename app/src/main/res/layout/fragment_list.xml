@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/list"
-    android:name="edu.sjsu.android.accman.listFragment"
+    android:name="edu.sjsu.android.finalproject6.listFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
@@ -12,4 +12,4 @@
     tools:context=".ListFragment"
     tools:listitem="@layout/row_layout" />
 
-<!-- android:name="edu.sjsu.android.accman.listFragment" -->
+<!-- android:name="edu.sjsu.android.finalproject6.listFragment" -->
