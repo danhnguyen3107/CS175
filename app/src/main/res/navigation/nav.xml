@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    android:label="AccMan"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="edu.sjsu.android.accman.DetailFragment"
+
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="my_account"
+            app:argType="edu.sjsu.android.accman.Account" />
+        <action
+            android:id="@+id/detail_to_editDetail"
+            app:destination="@id/editDetailFragment" />
+        <action
+            android:id="@+id/detail_to_list"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="edu.sjsu.android.accman.ListFragment"
+
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/list_to_detail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="edu.sjsu.android.accman.InfoFragment"
+
+        tools:layout="@layout/fragment_info" />
+
+    <action
+        android:id="@+id/goto_info"
+        app:destination="@id/infoFragment" />
+    <fragment
+        android:id="@+id/editDetailFragment"
+        android:name="edu.sjsu.android.accman.EditDetailFragment"
+
+        tools:layout="@layout/fragment_edit_detail"
+        >
+        <argument
+            android:name="my_account"
+            app:argType="edu.sjsu.android.accman.Account" />
+        <action
+            android:id="@+id/editDetail_to_detail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountFragment"
+        android:name="edu.sjsu.android.accman.AddAccountFragment"
+
+        tools:layout="@layout/fragment_add_account"
+        />
+    <action
+        android:id="@+id/goto_add"
+        app:destination="@id/addAccountFragment" />
+</navigation>
+
+<!--
+android:label="Account Profile"
+android:label="Account List"
+android:label="App Info"
+android:label="Edit Account"
+android:label="Add Account"
+-->
