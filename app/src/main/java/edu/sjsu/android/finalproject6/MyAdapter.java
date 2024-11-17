@@ -3,18 +3,18 @@ package edu.sjsu.android.finalproject6;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import java.util.List;
+
+import java.util.ArrayList;
 
 import edu.sjsu.android.finalproject6.databinding.RowLayoutBinding;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
-    private final List<Account> accountList;
-    private edu.sjsu.android.finalproject6.OnAccountClickedListener listener;
+    private final ArrayList<Account> accountList;
+    private OnAccountClickedListener listener;
 
-    public MyAdapter(List<Account> items) {
+    public MyAdapter(ArrayList<Account> items) {
         accountList = items;
     }
     public void setListener(OnAccountClickedListener listener) {
@@ -35,8 +35,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         //holder.mIdView.setText(mValues.get(position).id);
         //holder.mContentView.setText(mValues.get(position).content);
         Account account = accountList.get(position);
-//        holder.nameView.setText(account.getNameID());
-//        holder.phoneView.setText(account.getPhoneID());
+        holder.accountNameView.setText(account.getAccountName());
+        holder.usernameView.setText(account.getUsername());
     }
 
     @Override
@@ -45,13 +45,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView nameView;
-        public final TextView phoneView;
+        public final TextView accountNameView;
+        public final TextView usernameView;
 
         public ViewHolder(RowLayoutBinding binding, OnAccountClickedListener listener) {
             super(binding.getRoot());
-            nameView = binding.accountName;
-            phoneView = binding.username;
+            accountNameView = binding.accountName;
+            usernameView = binding.username;
             binding.getRoot().setOnClickListener(v -> listener.onClick(getLayoutPosition()));
         }
     }

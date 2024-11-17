@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 public class ListFragment extends Fragment {
     private ArrayList<Account> accountList;
+
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -29,7 +30,8 @@ public class ListFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        accountList = new ArrayList<>();
+        DatabaseHelper db = new DatabaseHelper(getContext());
+        accountList = db.getAllAccounts();
 //        accountList.add(new Account(R.string.a1_email, R.string.a1_name,R.string.a1_phone, R.string.a1_password));
 //        accountList.add(new Account(R.string.a2_email, R.string.a2_name, R.string.a2_phone, R.string.a2_password));
     }

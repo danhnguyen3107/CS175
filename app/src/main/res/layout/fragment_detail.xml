@@ -26,14 +26,13 @@
             android:text="@string/accountName"
             android:textSize="20sp"/>
 
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:text="@string/hello_blank_fragment"
-                android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/accountName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:textSize="20sp"/>
     </LinearLayout>
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
@@ -58,7 +57,6 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
                 android:scrollbars="vertical"
-                android:text="@string/hello_blank_fragment"
                 android:textSize="20sp"
                 />
     </LinearLayout>
@@ -85,7 +83,6 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
                 android:scrollbars="vertical"
-                android:text="@string/hello_blank_fragment"
                 android:textSize="20sp"
                 />
     </LinearLayout>

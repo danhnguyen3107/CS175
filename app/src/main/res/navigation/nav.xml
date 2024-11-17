@@ -11,16 +11,18 @@
         android:name="edu.sjsu.android.finalproject6.DetailFragment"
 
         tools:layout="@layout/fragment_detail" >
-        <argument
-            android:name="my_account"
-            app:argType="edu.sjsu.android.finalproject6.Account" />
-        <action
-            android:id="@+id/detail_to_editDetail"
-            app:destination="@id/editDetailFragment" />
+
         <action
             android:id="@+id/detail_to_list"
             app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_editDetailFragment2"
+            app:destination="@id/editDetailFragment" />
+
+
     </fragment>
+
+
     <fragment
         android:id="@+id/listFragment"
         android:name="edu.sjsu.android.finalproject6.ListFragment"
@@ -30,6 +32,8 @@
             android:id="@+id/list_to_detail"
             app:destination="@id/detailFragment" />
     </fragment>
+
+
     <fragment
         android:id="@+id/infoFragment"
         android:name="edu.sjsu.android.finalproject6.InfoFragment"
@@ -39,28 +43,34 @@
     <action
         android:id="@+id/goto_info"
         app:destination="@id/infoFragment" />
-    <fragment
-        android:id="@+id/editDetailFragment"
-        android:name="edu.sjsu.android.finalproject6.EditDetailFragment"
 
-        tools:layout="@layout/fragment_edit_detail"
-        >
-        <argument
-            android:name="my_account"
-            app:argType="edu.sjsu.android.finalproject6.Account" />
-        <action
-            android:id="@+id/editDetail_to_detail"
-            app:destination="@id/detailFragment" />
-    </fragment>
+
+
+
     <fragment
         android:id="@+id/addAccountFragment"
         android:name="edu.sjsu.android.finalproject6.AddAccountFragment"
 
         tools:layout="@layout/fragment_add_account"
-        />
+        >
+        <action
+            android:id="@+id/action_addAccountFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
     <action
         android:id="@+id/goto_add"
         app:destination="@id/addAccountFragment" />
+
+    <fragment
+        android:id="@+id/editDetailFragment"
+        android:name="edu.sjsu.android.finalproject6.EditDetailFragment"
+
+        tools:layout="@layout/fragment_edit_detail" >
+        <action
+            android:id="@+id/action_editDetailFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
 </navigation>
 
 <!--

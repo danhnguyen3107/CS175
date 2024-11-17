@@ -1,6 +1,7 @@
 package edu.sjsu.android.finalproject6;
 
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -10,50 +11,64 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import edu.sjsu.android.finalproject6.databinding.FragmentDetailBinding;
+import edu.sjsu.android.finalproject6.databinding.FragmentEditDetailBinding;
+
 
 public class EditDetailFragment extends Fragment {
 
     private Account account;
-    private Bundle bundle;
+
+    private FragmentEditDetailBinding binding;
 
     public EditDetailFragment() {
         // Required empty public constructor
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Bundle argument = getArguments();
-        bundle = getArguments();
+
 
         if (getArguments() != null) {
-            String key = requireContext().getString(R.string.argument_key);
-            account = bundle.getParcelable(key);
+            String key = getContext().getString(R.string.argument_key);
+            account = getArguments().getParcelable("Account");
         }
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //View view = inflater.inflate(R.layout.fragment_edit_detail, container, false);
-
-        FragmentDetailBinding binding = FragmentDetailBinding.inflate(inflater);
-        //binding.insertEmail.setText(account.getEmailID());
-        //binding.insertName.setText(account.getNameID());
-        //binding.insertPhone.setText(account.getPhoneID());
-        //binding.insertNPassword.setText(account.getPasswordID());
-        //binding.saveBtn.setOnClickListener(this::returnDetail);
+        binding = FragmentEditDetailBinding.inflate(inflater);
+        binding.insertAccName.setText(account.getAccountName());
+        binding.insertUserName.setText(account.getUsername());
+        binding.insertAccPassword.setText(account.getAccountPassword());
+        binding.saveBtn.setOnClickListener(this::editAccount);
 
         return binding.getRoot();
     }
 
-    //TODO: Saving the edits made
-    private void returnDetail(View view) {
-        //Bundle bundle = new Bundle();
+
+
+    private void editAccount(View view) {
+        DatabaseHelper db =new DatabaseHelper(getContext());
+
+        String accountName = binding.insertAccName.getText().toString();
+        String username = binding.insertUserName.getText().toString();
+        String accountPassword = binding.insertAccPassword.getText().toString();
+
+        account.setAccountName(accountName);
+        account.setUsername(username);
+        account.setAccountPassword(accountPassword);
+
+        db.editAccount(account);
+
+
+        Bundle bundle = new Bundle();
         bundle.putParcelable(getContext().getString(R.string.argument_key), account);
         NavController controller = NavHostFragment.findNavController(this);
-        controller.navigate(R.id.editDetail_to_detail);
+        controller.navigate(R.id.action_editDetailFragment_to_detailFragment, bundle);
     }
 }
