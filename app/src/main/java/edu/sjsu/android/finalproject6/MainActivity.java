@@ -22,12 +22,12 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     private NavController navController;
-    EditText accountName;
-    EditText username;
-    EditText password;
-    EditText idInput;
-    EditText searchText;
-    DatabaseHelper db;
+//    EditText accountName;
+//    EditText username;
+//    EditText password;
+//    EditText idInput;
+//    EditText searchText;
+//    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,69 +86,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
-
-    public void test(){
-        setContentView(R.layout.test);
-        accountName = (EditText) findViewById(R.id.accountname);
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
-        idInput = (EditText) findViewById(R.id.idInput);
-        searchText = (EditText) findViewById(R.id.search);
-        db = new DatabaseHelper(this);
-
-    }
-    public void btnAddPressed(View v){
-        Account temp = new Account(username.getText().toString(), accountName.getText().toString(), password.getText().toString());
-
-        db.addAccount(temp);
-    }
-
-    public void btnDeletePressed(View v){
-        Account temp = new Account();
-        temp.setId(Integer.parseInt(idInput.getText().toString()));
-        db.deleteAccount(temp);
-    }
-
-
-    public void btnGetPressed(View v){
-        ArrayList<Account> accounts =  db.getAllAccounts();
-
-        for (Account acc : accounts){
-            Log.i("Database Info: ", "ID: " + acc.getId() + " AccountName: " + acc.getAccountName() + " Username: " + acc.getUsername() + " Password: " + acc.getAccountPassword());
-        }
-
-
-    }
-
-    public void btnDeleteAllPressed(View v){
-        db.deleteAllAccounts();
-    }
-
-    public void btnEditPressed(View v){
-        Account temp = new Account(
-                Integer.parseInt(idInput.getText().toString()),
-                username.getText().toString(),
-                accountName.getText().toString(),
-                password.getText().toString());
-        db.editAccount(temp);
-    }
-
-    public void btnSearchPressed(View v){
-        String text = searchText.getText().toString();
-        ArrayList<Account> accounts =  db.searchAccounts(text);
-        if (accounts.isEmpty()){
-            Log.i("Message: ", "there is not account match");
-        }
-        for (Account acc : accounts){
-            Log.i("Database Info: ", "ID: " + acc.getId() + " AccountName: " + acc.getAccountName() + " Username: " + acc.getUsername() + " Password: " + acc.getAccountPassword());
-        }
-
-
-    }
 }
