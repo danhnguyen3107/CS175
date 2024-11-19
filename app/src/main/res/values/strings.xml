@@ -36,6 +36,7 @@
     <string name="phone">Phone:</string>
     <string name="password">Password:</string>
     <string name="delete_account">Delete Account</string>
+    <string name="search">Search</string>
 
 
 </resources>
