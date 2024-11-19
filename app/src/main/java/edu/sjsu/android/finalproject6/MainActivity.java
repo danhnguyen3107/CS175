@@ -75,8 +75,11 @@ public class MainActivity extends AppCompatActivity {
             NavController navController = navHostFragment.getNavController();
             navController.navigate(R.id.goto_add);
             return true;
-        }
+        } else if (item.getItemId() == R.id.search) {
+            //TODO: Implement searching
 
+            return true;
+        }
         else return super.onOptionsItemSelected(item);
     }
 
