@@ -62,7 +62,7 @@ public class AddAccountFragment extends Fragment {
         account.setAccountPassword(password);
 
         // TODO: Add account to database
-        db.addAccount(account);
+
 
         Toast.makeText(requireContext(), "Account added successfully", Toast.LENGTH_SHORT).show();
 

@@ -59,11 +59,8 @@ public class EditDetailFragment extends Fragment {
         String username = binding.insertUserName.getText().toString();
         String accountPassword = binding.insertAccPassword.getText().toString();
 
-        account.setAccountName(accountName);
-        account.setUsername(username);
-        account.setAccountPassword(accountPassword);
 
-        db.editAccount(account);
+        //Todo: edit Account in database
 
 
         Bundle bundle = new Bundle();

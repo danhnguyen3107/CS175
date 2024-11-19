@@ -50,7 +50,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-
     public  void populateData(SQLiteDatabase sqLiteDatabase) {
         ContentValues values = new ContentValues();
 
@@ -70,16 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.insert(TABLE_ACCOUNT, null, values);
     }
 
-    public void addAccount(Account account) {
-        SQLiteDatabase database = getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(USERNAME, account.getUsername());
-        values.put(ACCOUNT_NAME, account.getAccountName());
-//        values.put(ID, account.getId());
-        values.put(ACCOUNT_PASSWORD, account.getAccountPassword());
-        database.insert(TABLE_ACCOUNT, null, values);
-        database.close();
-    }
+
 
     public void deleteAccount(Account account) {
         SQLiteDatabase database = getWritableDatabase();
@@ -118,15 +108,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public void editAccount(Account account) {
-        SQLiteDatabase database = getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(USERNAME, account.getUsername());
-        values.put(ACCOUNT_NAME, account.getAccountName());
-        values.put(ACCOUNT_PASSWORD, account.getAccountPassword());
-        database.update(TABLE_ACCOUNT, values, ID + " =?", new String[] {String.valueOf(account.getId())});
-        database.close();
-    }
+
 
     public ArrayList<Account> searchAccounts(String keyword) {
         ArrayList<Account> accountList = new ArrayList<Account>();
