@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -19,21 +21,19 @@ import java.util.ArrayList;
 
 public class ListFragment extends Fragment {
     private ArrayList<Account> accountList;
+//    private MenuItem menuItem;
+//    private SearchView searchView;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public ListFragment() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         DatabaseHelper db = new DatabaseHelper(getContext());
         accountList = db.getAllAccounts();
-//        accountList.add(new Account(R.string.a1_email, R.string.a1_name,R.string.a1_phone, R.string.a1_password));
-//        accountList.add(new Account(R.string.a2_email, R.string.a2_name, R.string.a2_phone, R.string.a2_password));
+
     }
 
     @Override
@@ -70,6 +70,19 @@ public class ListFragment extends Fragment {
         bundle.putParcelable(getContext().getString(R.string.argument_key), account);
         NavController controller = NavHostFragment.findNavController(this);
         controller.navigate(R.id.list_to_detail, bundle);
+    }
+
+    public void filterAccounts(String text){
+        DatabaseHelper db = new DatabaseHelper(getContext());
+        this.accountList = db.searchAccounts(text);
+        updateRecyclerView( accountList);
+    }
+
+    private void updateRecyclerView(ArrayList<Account> filteredList) {
+        MyAdapter adapter = new MyAdapter(filteredList);
+        adapter.setListener(this::onClick);
+        RecyclerView recyclerView = getView().findViewById(R.id.list); // Adjust ID as necessary
+        recyclerView.setAdapter(adapter);
     }
 
     public void showWarning(int position) {

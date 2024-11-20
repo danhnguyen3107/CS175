@@ -11,11 +11,14 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.customview.widget.Openable;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -48,7 +51,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                performSearch(newText);
+
+                return false;
+            }
+        });
+
         return super.onCreateOptionsMenu(menu);
+
     }
 
     @Override
@@ -78,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
         } else if (item.getItemId() == R.id.search) {
             //TODO: Implement searching
 
+
+
             return true;
         }
         else return super.onOptionsItemSelected(item);
@@ -88,5 +111,17 @@ public class MainActivity extends AppCompatActivity {
         return navController.navigateUp() || super.onSupportNavigateUp();
     }
 
+    private void performSearch(String query) {
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.fragment);
+
+        if (navHostFragment != null) {
+            Fragment currentFragment = navHostFragment.getChildFragmentManager().getPrimaryNavigationFragment();
+
+            if (currentFragment instanceof ListFragment) {
+                ((ListFragment) currentFragment).filterAccounts(query);
+            }
+        }
+    }
 
 }
