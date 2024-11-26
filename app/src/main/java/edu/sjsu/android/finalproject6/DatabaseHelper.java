@@ -69,7 +69,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.insert(TABLE_ACCOUNT, null, values);
     }
 
+    public void addAccount(Account account) {
+        SQLiteDatabase database = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(USERNAME, account.getUsername());
+        values.put(ACCOUNT_NAME, account.getAccountName());
+        values.put(ACCOUNT_PASSWORD, account.getAccountPassword());
+        database.insert(TABLE_ACCOUNT, null, values);
+        database.close();
+    }
 
+    public void editAccount(Account account) {
+        SQLiteDatabase database = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(USERNAME, account.getUsername());
+        values.put(ACCOUNT_NAME, account.getAccountName());
+        values.put(ACCOUNT_PASSWORD, account.getAccountPassword());
+        database.update(TABLE_ACCOUNT, values, ID + " =?", new String[] {String.valueOf(account.getId())});
+        database.close();
+    }
 
     public void deleteAccount(Account account) {
         SQLiteDatabase database = getWritableDatabase();
