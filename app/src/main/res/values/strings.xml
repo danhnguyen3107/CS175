@@ -33,8 +33,8 @@
     <string name="add_account">Add Account</string>
     <string name="accountName">Account Name: </string>
     <string name="username">Username: </string>
-    <string name="phone">Phone:</string>
-    <string name="password">Password:</string>
+    <string name="phone">Phone: </string>
+    <string name="password">Password: </string>
     <string name="delete_account">Delete Account</string>
     <string name="search">Search</string>
 
