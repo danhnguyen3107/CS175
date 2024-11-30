@@ -4,24 +4,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+
     tools:context=".InfoFragment">
 
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
     <TextView
-        android:id = "@+id/info_info"
+        android:id="@+id/websiteText"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/info_website_text" />
+
+    <TextView
+        android:id="@+id/website"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/info_website" />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/info_info"
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/info" />
 
     <Button
-        android:id = "@+id/tel_btn"
+        android:id="@+id/tel_btn"
         android:textSize="24sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="@string/tel_888_8888"
         />
 
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/info_version"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/version_history" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp" >
+
+        <TextView
+            android:id="@+id/version_1_0"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/v_1_0" />
+
+    </ScrollView>
 
 </LinearLayout>
