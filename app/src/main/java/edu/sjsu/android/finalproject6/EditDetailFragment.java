@@ -30,7 +30,6 @@ public class EditDetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         if (getArguments() != null) {
             String key = getContext().getString(R.string.argument_key);
             account = getArguments().getParcelable("Account");
@@ -53,15 +52,24 @@ public class EditDetailFragment extends Fragment {
 
 
     private void editAccount(View view) {
-        DatabaseHelper db =new DatabaseHelper(getContext());
+        DatabaseHelper db = new DatabaseHelper(getContext());
 
         String accountName = binding.insertAccName.getText().toString();
         String username = binding.insertUserName.getText().toString();
         String accountPassword = binding.insertAccPassword.getText().toString();
 
+        if (accountName.isEmpty() || username.isEmpty() || accountPassword.isEmpty()) {
+            return;
+        }
+        if (account != null) {
+            account.setAccountName(accountName);
+            account.setUsername(username);
+            account.setAccountPassword(accountPassword);
+        }
 
         //Todo: edit Account in database
-
+        assert account != null;
+        db.editAccount(account);
 
         Bundle bundle = new Bundle();
         bundle.putParcelable(getContext().getString(R.string.argument_key), account);

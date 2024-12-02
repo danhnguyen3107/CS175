@@ -26,8 +26,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, VERSION);
     }
 
-
-
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String createAccountTable = String.format("CREATE TABLE %s " +
@@ -132,5 +130,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         database.close();
 
         return accountList;
+    }
+
+    public void addAccount(Account account) {
+        SQLiteDatabase database = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(ACCOUNT_NAME, account.getAccountName());
+        values.put(USERNAME, account.getUsername());
+        values.put(ACCOUNT_PASSWORD, account.getAccountPassword());
+        database.insert(TABLE_ACCOUNT, null, values);
+        database.close();
+    }
+
+    public void editAccount(Account account) {
+        SQLiteDatabase database = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(ACCOUNT_NAME, account.getAccountName());
+        values.put(USERNAME, account.getUsername());
+        values.put(ACCOUNT_PASSWORD, account.getAccountPassword());
+        database.update(TABLE_ACCOUNT, values, ID + " = ?",
+                new String[] {String.valueOf(account.getId())});
+        database.close();
     }
 }
