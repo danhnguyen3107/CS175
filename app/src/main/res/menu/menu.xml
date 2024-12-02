@@ -17,6 +17,9 @@
 <item
     android:id="@+id/unin"
     android:title="@string/uninstall"/>
+<item
+    android:id="@+id/serv"
+    android:title="@string/serv"/>
 </menu>
 
 

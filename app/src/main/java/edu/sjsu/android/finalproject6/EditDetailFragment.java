@@ -37,7 +37,7 @@ public class EditDetailFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentEditDetailBinding.inflate(inflater);
@@ -67,7 +67,6 @@ public class EditDetailFragment extends Fragment {
             account.setAccountPassword(accountPassword);
         }
 
-        //Todo: edit Account in database
         assert account != null;
         db.editAccount(account);
 

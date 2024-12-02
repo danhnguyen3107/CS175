@@ -42,5 +42,13 @@
     <string name="info_website">accman.com</string>
     <string name="version_history"><b>Version History:</b></string>
     <string name="v_1_0"><b>1.0:</b> Initial launch of app.</string>
-    
+    <string name="serv">Keyboard Settings</string>
+    <string name="password_manager">Password Manager</string>
+    <string name="select_account">Select Account</string>
+    <string name="select_an_account">Select an Account</string>
+    <string name="back">Back</string>
+    <string name="passwordKeyboard">Password</string>
+    <string name="accountKeyboard">Account Name: %s</string>
+    <string name="usernameKeyboard">Username: %s</string>
+
 </resources>
