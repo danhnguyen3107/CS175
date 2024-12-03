@@ -12,7 +12,7 @@
         android:orientation="vertical"
         tools:context=".EditDetailFragment">
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
@@ -28,13 +28,13 @@
 
         <TextView
             android:id="@+id/accountName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:textSize="20sp"/>
     </LinearLayout>
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
@@ -51,12 +51,11 @@
             />
         <TextView
             android:id="@+id/name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollbars="vertical"
             android:layout_marginStart="8dp"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -76,17 +75,16 @@
             />
         <TextView
             android:id="@+id/password"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scrollbars="vertical"
             android:layout_marginStart="8dp"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/togglePasswordVisibilityBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.2"
@@ -96,14 +94,16 @@
         
         <Button
             android:id="@+id/editBtn"
-            android:layout_width="wrap_content"
+            style="@style/my_button.dark"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_gravity="center"
             android:text="@string/edit_account" />
         <Button
             android:id="@+id/deleteBtn"
-            android:layout_width="wrap_content"
+            style="@style/my_button.red"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_gravity="center"

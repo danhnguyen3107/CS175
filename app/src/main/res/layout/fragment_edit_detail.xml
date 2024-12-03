@@ -30,9 +30,9 @@
             <!--Insert Name -->
             <EditText
                 android:id="@+id/insertAccName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints="Enter an email address"
+                android:autofillHints="Account Name"
                 android:inputType="textEmailAddress"
                 android:scrollbars="vertical"
                 android:text="@string/hello_blank_fragment"
@@ -53,15 +53,13 @@
                 android:layout_height="wrap_content"
                 android:scrollbars="vertical"
                 android:text="@string/enter_name"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
-            <!--Account Description -->
             <EditText
                 android:id="@+id/insertUserName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints="Enter a username for the email"
+                android:autofillHints="Enter a username"
                 android:inputType="text"
                 android:scrollbars="vertical"
                 android:text="@string/hello_blank_fragment"
@@ -81,10 +79,8 @@
                 android:layout_height="wrap_content"
                 android:scrollbars="vertical"
                 android:text="@string/enter_new_password"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
-            <!--Account Description -->
             <EditText
                 android:id="@+id/insertAccPassword"
                 android:layout_width="wrap_content"
@@ -98,7 +94,7 @@
 
             <ImageButton
                 android:id="@+id/togglePasswordVisibilityBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="0.2"
@@ -108,7 +104,8 @@
         
         <Button
             android:id="@+id/saveBtn"
-            android:layout_width="wrap_content"
+            style="@style/my_button.dark"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_gravity="center"

@@ -3,6 +3,7 @@ package edu.sjsu.android.finalproject6;
 import android.inputmethodservice.InputMethodService;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -31,6 +32,11 @@ public class AccManKeyboard extends InputMethodService {
         return mainKeyboardView;
     }
 
+    @Override
+    public boolean onEvaluateFullscreenMode() {
+        return false; // Disable fullscreen mode
+    }
+
     private void setupMainKeyboardView(View view) {
         Button switchButton = view.findViewById(R.id.switch_to_accounts);
         switchButton.setOnClickListener(v -> showAccountSelectionView());
@@ -40,13 +46,17 @@ public class AccManKeyboard extends InputMethodService {
         if (accountSelectionView == null) {
             LayoutInflater inflater = LayoutInflater.from(this);
             LinearLayout parent = new LinearLayout(this);
-            accountSelectionView = inflater.inflate(R.layout.account_selection_layout, parent, false);
+            // Set the height to 1/3 of the screen
+            //parent.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 400, 1f));
+
+            accountSelectionView = inflater.inflate(R.layout.account_selection_layout, parent, true);
 
             LinearLayout accountList = accountSelectionView.findViewById(R.id.account_list);
             List<Account> accounts = db.getAllAccounts();
 
             for (Account account : accounts) {
                 LinearLayout accountEntry = new LinearLayout(this);
+                //accountEntry.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 accountEntry.setOrientation(LinearLayout.VERTICAL);
 
                 TextView accountNameTextView = new TextView(this);

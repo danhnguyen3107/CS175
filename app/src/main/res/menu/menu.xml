@@ -21,6 +21,3 @@
     android:id="@+id/unin"
     android:title="@string/uninstall"/>
 </menu>
-
-
-    <!--app:showAsAction="always|withText" -->
