@@ -2,6 +2,7 @@ package edu.sjsu.android.finalproject6;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -33,7 +34,7 @@ public class AddAccountFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentAddAccountBinding.inflate(inflater);
@@ -44,7 +45,6 @@ public class AddAccountFragment extends Fragment {
 
 
     public void addAccount(View view) {
-
         DatabaseHelper db = new DatabaseHelper(getContext());
 
         String accountName = binding.insertAccountName.getText().toString();
@@ -61,8 +61,7 @@ public class AddAccountFragment extends Fragment {
         account.setUsername(username);
         account.setAccountPassword(password);
 
-        // TODO: Add account to database
-
+        db.addAccount(account);
 
         Toast.makeText(requireContext(), "Account added successfully", Toast.LENGTH_SHORT).show();
 

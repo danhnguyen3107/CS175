@@ -17,14 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
             android:orientation="horizontal">
             <!--Account Username -->
             <TextView
                 android:id="@+id/enterAccName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
                 android:text="@string/enter_accountName"
                 android:textSize="20sp"/>
 
@@ -33,8 +33,6 @@
                 android:id="@+id/insertAccName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
                 android:autofillHints="Enter an email address"
                 android:inputType="textEmailAddress"
                 android:scrollbars="vertical"
@@ -47,13 +45,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/enterUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
                 android:scrollbars="vertical"
                 android:text="@string/enter_name"
                 android:textSize="20sp"
@@ -64,8 +62,6 @@
                 android:id="@+id/insertUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
                 android:autofillHints="Enter a username for the email"
                 android:inputType="text"
                 android:scrollbars="vertical"
@@ -77,13 +73,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/enterAccPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
                 android:scrollbars="vertical"
                 android:text="@string/enter_new_password"
                 android:textSize="20sp"
@@ -94,14 +90,13 @@
                 android:id="@+id/insertAccPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
                 android:autofillHints="Enter a new password for the email"
                 android:inputType="textPassword"
                 android:scrollbars="vertical"
                 android:text="@string/hello_blank_fragment"
                 android:textSize="20sp" />
         </LinearLayout>
+        
         <Button
             android:id="@+id/saveBtn"
             android:layout_width="wrap_content"

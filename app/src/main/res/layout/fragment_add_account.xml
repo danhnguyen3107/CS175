@@ -17,16 +17,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
+        android:layout_margin="5dp"
         android:orientation="horizontal">
         <!--Account Username -->
     <TextView
         android:id="@+id/enterAccountName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
         android:text="@string/enter_accountName"
         android:textSize="20sp"/>
 
@@ -35,10 +32,6 @@
         android:id="@+id/insertAccountName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
         android:inputType="text"
         android:scrollbars="vertical"
 
@@ -50,15 +43,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
+        android:layout_margin="5dp"
         android:orientation="horizontal">
         <TextView
             android:id="@+id/enterName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
             android:scrollbars="vertical"
             android:text="@string/enter_name"
             android:textSize="20sp"
@@ -69,10 +59,6 @@
             android:id="@+id/insertName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
             android:inputType="text"
             android:scrollbars="vertical"
 
@@ -83,15 +69,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
+        android:layout_margin="5dp"
         android:orientation="horizontal">
         <TextView
             android:id="@+id/enterPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
             android:scrollbars="vertical"
             android:text="Enter password: "
             android:textSize="20sp"
@@ -102,15 +85,12 @@
             android:id="@+id/insertPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
             android:inputType="text"
             android:scrollbars="vertical"
 
             android:textSize="20sp" />
         </LinearLayout>
+        
         <Button
             android:id="@+id/saveBtn"
             android:layout_width="wrap_content"
