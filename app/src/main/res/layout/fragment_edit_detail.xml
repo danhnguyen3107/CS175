@@ -36,6 +36,7 @@
                 android:inputType="textEmailAddress"
                 android:scrollbars="vertical"
                 android:text="@string/hello_blank_fragment"
+                android:layout_marginStart="8dp"
                 android:textSize="20sp"
                 />
         </LinearLayout>
@@ -64,6 +65,7 @@
                 android:inputType="text"
                 android:scrollbars="vertical"
                 android:text="@string/hello_blank_fragment"
+                android:layout_marginStart="8dp"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -91,6 +93,7 @@
                 android:inputType="textPassword"
                 android:scrollbars="vertical"
                 android:text="@string/hello_blank_fragment"
+                android:layout_marginStart="8dp"
                 android:textSize="20sp" />
 
             <ImageButton
