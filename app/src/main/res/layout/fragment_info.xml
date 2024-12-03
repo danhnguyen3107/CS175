@@ -26,7 +26,8 @@
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/info_website" />
+        android:text="@string/info_website"
+        android:layout_marginStart="8dp"/>
 
     </LinearLayout>
 
@@ -42,7 +43,8 @@
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/info" />
+        android:text="@string/info"
+        android:layout_marginStart="8dp"/>
 
     <Button
         android:id="@+id/tel_btn"
