@@ -16,8 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_margin="16dp"
         android:orientation="horizontal">
 
         <TextView
@@ -38,8 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_margin="16dp"
         android:orientation="horizontal">
         
         <TextView
@@ -63,8 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints=""
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_margin="16dp"
         android:orientation="horizontal">
         
         <TextView
@@ -98,14 +95,14 @@
             android:id="@+id/editBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_margin="16dp"
             android:layout_gravity="center"
             android:text="@string/edit_account" />
         <Button
             android:id="@+id/deleteBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:layout_gravity="center"
             android:text="@string/delete_account" />
 
