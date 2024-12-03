@@ -7,9 +7,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import edu.sjsu.android.finalproject6.databinding.FragmentAddAccountBinding;
@@ -39,6 +43,26 @@ public class AddAccountFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentAddAccountBinding.inflate(inflater);
         binding.saveBtn.setOnClickListener(this::addAccount);
+
+
+        ImageButton togglePasswordButton = binding.togglePasswordVisibilityBtn;
+        TextView passwordTextView = binding.insertPassword;
+
+        passwordTextView.setTransformationMethod(new PasswordTransformationMethod());
+
+        // Toggle the password visibility when the button is clicked
+        togglePasswordButton.setOnClickListener(v -> {
+            if (passwordTextView.getTransformationMethod() instanceof PasswordTransformationMethod) {
+                // Show password
+                passwordTextView.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                togglePasswordButton.setImageResource(android.R.drawable.ic_menu_view); // Change icon to 'eye open'
+            } else {
+                // Hide password
+                passwordTextView.setTransformationMethod(new PasswordTransformationMethod());
+                togglePasswordButton.setImageResource(android.R.drawable.ic_secure); // Change icon to 'eye closed'
+            }
+        });
+
 
         return binding.getRoot();
     }
