@@ -7,9 +7,14 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
 
 import edu.sjsu.android.finalproject6.databinding.FragmentDetailBinding;
 
@@ -49,6 +54,24 @@ public class DetailFragment extends Fragment {
 
         binding.editBtn.setOnClickListener(this::goEdit);
         binding.deleteBtn.setOnClickListener(this::showWarning);
+
+        ImageButton togglePasswordButton = binding.togglePasswordVisibilityBtn;
+        TextView passwordTextView = binding.password;
+
+        passwordTextView.setTransformationMethod(new PasswordTransformationMethod());
+
+        // Toggle the password visibility when the button is clicked
+        togglePasswordButton.setOnClickListener(v -> {
+            if (passwordTextView.getTransformationMethod() instanceof PasswordTransformationMethod) {
+                // Show password
+                passwordTextView.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                togglePasswordButton.setImageResource(android.R.drawable.ic_menu_view); // Change icon to 'eye open'
+            } else {
+                // Hide password
+                passwordTextView.setTransformationMethod(new PasswordTransformationMethod());
+                togglePasswordButton.setImageResource(android.R.drawable.ic_secure); // Change icon to 'eye closed'
+            }
+        });
 
         return binding.getRoot();
     }
