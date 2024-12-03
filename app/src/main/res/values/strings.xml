@@ -41,7 +41,7 @@
     <string name="info_website_text"><b>Website:</b></string>
     <string name="info_website">accman.com</string>
     <string name="version_history"><b>Version History:</b></string>
-    <string name="v_1_0"><b>1.0:</b>Initial launch of app.</string>
+    <string name="v_1_0"><b>1.0:</b> Initial launch of app.</string>
     <string name="serv">Keyboard Settings</string>
     <string name="password_manager">Password Manager</string>
     <string name="select_account">Select Account</string>
