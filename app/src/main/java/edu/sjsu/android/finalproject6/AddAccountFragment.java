@@ -76,7 +76,7 @@ public class AddAccountFragment extends Fragment {
         String password = binding.insertPassword.getText().toString();
 
         if (accountName.isEmpty() || username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), "Please fill all fields.", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -87,7 +87,7 @@ public class AddAccountFragment extends Fragment {
 
         db.addAccount(account);
 
-        Toast.makeText(requireContext(), "Account added successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireContext(), "Account added successfully.", Toast.LENGTH_SHORT).show();
 
 
         NavController controller = NavHostFragment.findNavController(this);
