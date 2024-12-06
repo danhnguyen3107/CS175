@@ -50,5 +50,6 @@
     <string name="passwordKeyboard">Password</string>
     <string name="accountKeyboard">Account Name: %s</string>
     <string name="usernameKeyboard">Username: %s</string>
+    <string name="home">Home</string>
 
 </resources>
