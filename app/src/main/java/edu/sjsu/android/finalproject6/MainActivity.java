@@ -136,6 +136,13 @@ public class MainActivity extends AppCompatActivity {
         } else if (item.getItemId() == R.id.serv) {
             keyboardDialog();
             return true;
+        } else if (item.getItemId() == R.id.home) {
+            NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.fragment);
+            assert navHostFragment != null;
+            NavController navController = navHostFragment.getNavController();
+            navController.navigate(R.id.goto_home);
+            return true;
         } else if (item.getItemId() == R.id.search) {
             //TODO: Implement searching
 
