@@ -9,7 +9,6 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="edu.sjsu.android.finalproject6.DetailFragment"
-
         tools:layout="@layout/fragment_detail" >
 
         <action
@@ -18,34 +17,29 @@
         <action
             android:id="@+id/action_detailFragment_to_editDetailFragment2"
             app:destination="@id/editDetailFragment" />
-
-
     </fragment>
-
 
     <fragment
         android:id="@+id/listFragment"
         android:name="edu.sjsu.android.finalproject6.ListFragment"
-
         tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/list_to_detail"
             app:destination="@id/detailFragment" />
     </fragment>
 
-
     <fragment
         android:id="@+id/infoFragment"
         android:name="edu.sjsu.android.finalproject6.InfoFragment"
-
         tools:layout="@layout/fragment_info" />
 
     <action
         android:id="@+id/goto_info"
         app:destination="@id/infoFragment" />
 
-
-
+    <action
+        android:id="@+id/goto_home"
+        app:destination="@id/listFragment" />
 
     <fragment
         android:id="@+id/addAccountFragment"
