@@ -93,7 +93,7 @@
         <ImageButton
             android:id="@+id/togglePasswordVisibilityBtn"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.2"
             android:background="?android:attr/selectableItemBackground"
