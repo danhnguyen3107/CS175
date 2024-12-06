@@ -82,6 +82,7 @@ public class EditDetailFragment extends Fragment {
         String accountPassword = binding.insertAccPassword.getText().toString();
 
         if (accountName.isEmpty() || username.isEmpty() || accountPassword.isEmpty()) {
+            Toast.makeText(requireContext(), "Please fill all fields.", Toast.LENGTH_SHORT).show();
             return;
         }
         if (account != null) {
@@ -93,6 +94,8 @@ public class EditDetailFragment extends Fragment {
         assert account != null;
         db.editAccount(account);
 
+        Toast.makeText(requireContext(), "Successfully saved changes.", Toast.LENGTH_SHORT).show();
+        
         Bundle bundle = new Bundle();
         bundle.putParcelable(getContext().getString(R.string.argument_key), account);
         NavController controller = NavHostFragment.findNavController(this);
