@@ -80,16 +80,16 @@ public class EditDetailFragment extends Fragment {
 
         String accountName = binding.insertAccName.getText().toString();
         String username = binding.insertUserName.getText().toString();
-        String accountPassword = binding.insertAccPassword.getText().toString();
+        String password = binding.insertAccPassword.getText().toString();
 
-        if (accountName.isEmpty() || username.isEmpty() || accountPassword.isEmpty()) {
+        if (accountName.isEmpty() || username.isEmpty() || password.isEmpty()) {
             Toast.makeText(requireContext(), "Please fill all fields.", Toast.LENGTH_SHORT).show();
             return;
         }
         if (account != null) {
             account.setAccountName(accountName);
             account.setUsername(username);
-            account.setAccountPassword(accountPassword);
+            account.setAccountPassword(password);
         }
 
         assert account != null;
