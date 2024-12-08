@@ -12,15 +12,13 @@
         android:orientation="vertical"
         tools:context=".EditDetailFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:layout_margin="16dp"
             android:orientation="horizontal">
-            <!--Account Username -->
+
             <TextView
                 android:id="@+id/enterAccName"
                 android:layout_width="wrap_content"
@@ -28,7 +26,6 @@
                 android:text="@string/enter_accountName"
                 android:textSize="20sp"/>
 
-            <!--Insert Name -->
             <EditText
                 android:id="@+id/insertAccName"
                 android:layout_width="match_parent"
@@ -36,10 +33,10 @@
                 android:autofillHints="Account Name"
                 android:inputType="textEmailAddress"
                 android:scrollbars="vertical"
-                android:text="@string/hello_blank_fragment"
+                android:text="@string/temp"
                 android:layout_marginStart="8dp"
                 android:textSize="20sp"
-                />
+                tools:ignore="LabelFor" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,7 +60,7 @@
                 android:autofillHints="Enter a username"
                 android:inputType="text"
                 android:scrollbars="vertical"
-                android:text="@string/hello_blank_fragment"
+                android:text="@string/temp"
                 android:layout_marginStart="8dp"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -84,22 +81,24 @@
 
             <EditText
                 android:id="@+id/insertAccPassword"
-                android:layout_width="150dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:autofillHints="Enter a new password for the email"
                 android:inputType="textPassword"
                 android:scrollbars="vertical"
-                android:text="@string/hello_blank_fragment"
+                android:text="@string/temp"
                 android:layout_marginStart="8dp"
+                android:layout_weight="1"
                 android:textSize="20sp" />
 
             <ImageButton
                 android:id="@+id/togglePasswordVisibilityBtn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="0.2"
                 android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/toggle_password_visibility_desc"
                 android:src="@android:drawable/ic_secure" />
         </LinearLayout>
         

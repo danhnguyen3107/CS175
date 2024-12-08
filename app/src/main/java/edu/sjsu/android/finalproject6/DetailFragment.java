@@ -6,23 +6,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
-
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-
 import edu.sjsu.android.finalproject6.databinding.FragmentDetailBinding;
 
 public class DetailFragment extends Fragment {
-
+    // Private variable the detail fragment is based on
     private Account account;
-
-    private FragmentDetailBinding binding;
 
     public DetailFragment() {
         // Required empty public constructor
@@ -31,8 +28,7 @@ public class DetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+        // Get the account from the arguments
         if (getArguments() != null) {
             String key = requireContext().getString(R.string.argument_key);
             account = getArguments().getParcelable(key);
@@ -43,18 +39,18 @@ public class DetailFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        FragmentDetailBinding binding = FragmentDetailBinding.inflate(inflater);
 
-        //View view = inflater.inflate(R.layout.fragment_detail, container, false);
-        binding = FragmentDetailBinding.inflate(inflater);
-
+        // Set the account details
         binding.accountName.setText(account.getAccountName());
         binding.name.setText(account.getUsername());
         binding.password.setText(account.getAccountPassword());
-//        binding.details.setMovementMethod();
 
+        // On click listeners for edit and delete
         binding.editBtn.setOnClickListener(this::goEdit);
         binding.deleteBtn.setOnClickListener(this::showWarning);
 
+        // Toggle password visibility button
         ImageButton togglePasswordButton = binding.togglePasswordVisibilityBtn;
         TextView passwordTextView = binding.password;
 
@@ -76,37 +72,39 @@ public class DetailFragment extends Fragment {
         return binding.getRoot();
     }
 
+    // Method to navigate to edit fragment
     private void goEdit(View view) {
         Bundle bundle = new Bundle();
-        bundle.putParcelable(getContext().getString(R.string.argument_key), account);
+        bundle.putParcelable(requireContext().getString(R.string.argument_key), account);
         NavController controller = NavHostFragment.findNavController(this);
         controller.navigate(R.id.action_detailFragment_to_editDetailFragment2, bundle);
     }
 
+    // Method to show warning dialog for deleting an account
     public void showWarning(View view) {
+        // Create a warning dialog to confirm deletion
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Warning");
-        //builder.setMessage("Warning: ");
         builder.setMessage("Delete this account?");
-        builder.setPositiveButton("Yes", (dialog, id) -> {
-            // When user selects yes
-            deleteAccount();
-        });
+        builder.setPositiveButton("Yes", (dialog, id) -> deleteAccount());
         builder.setNegativeButton("No", (dialog, id) -> {
             // Do nothing when user clicks No
         });
         builder.create().show();
     }
 
-    //TODO: delete account and return user to account list.
+    // Method to delete the current shown account
     private void deleteAccount() {
-        DatabaseHelper db = new DatabaseHelper(getContext());
-        db.deleteAccount(account);
-
-        Bundle bundle = new Bundle();
-        bundle.putParcelable(getContext().getString(R.string.argument_key), account);
-        NavController controller = NavHostFragment.findNavController(this);
-        controller.navigate(R.id.detail_to_list);
+        // Try resource to delete current account
+        try (DatabaseHelper db = new DatabaseHelper(requireContext())) {
+            db.deleteAccount(account);
+            Bundle bundle = new Bundle();
+            bundle.putParcelable(requireContext().getString(R.string.argument_key), account);
+            NavController controller = NavHostFragment.findNavController(this);
+            controller.navigate(R.id.detail_to_list);
+        } catch (Exception e) {
+            Log.wtf("DetailFragment", e.getMessage());
+        }
     }
 
 }

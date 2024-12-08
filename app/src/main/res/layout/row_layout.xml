@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     android:orientation="vertical">
@@ -14,12 +13,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAppearance="?attr/textAppearanceListItem"
-        android:text="@string/hello_blank_fragment" />
+        android:text="@string/temp" />
     <TextView
         android:id="@+id/username"
         android:textSize="25sp"
         android:layout_marginBottom="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
+        android:text="@string/temp" />
 </LinearLayout>

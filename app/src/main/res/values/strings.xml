@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">AccMan</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="temp">temporary</string>
     <string name="argument_key">Account</string>
 
     <string name="info"><b>Phone Number:</b></string>
@@ -51,5 +51,6 @@
     <string name="accountKeyboard">Account Name: %s</string>
     <string name="usernameKeyboard">Username: %s</string>
     <string name="home">Home</string>
+    <string name="toggle_password_visibility_desc">Toggle the password visibility</string>
 
 </resources>

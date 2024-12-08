@@ -11,5 +11,3 @@
     app:layoutManager="LinearLayoutManager"
     tools:context=".ListFragment"
     tools:listitem="@layout/row_layout" />
-
-<!-- android:name="edu.sjsu.android.finalproject6.listFragment" -->

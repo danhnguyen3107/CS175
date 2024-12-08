@@ -2,20 +2,17 @@ package edu.sjsu.android.finalproject6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import androidx.annotation.NonNull;
 
 public class Account implements Parcelable {
 
+    // Local variables
     private int id;
     private String username;
     private String accountName;
     private String accountPassword;
 
-    public Account() {
-
-    }
-
+    // Constructor with id specified
     public Account(int id, String username, String accountName, String accountPassword) {
         this.id = id;
         this.username = username;
@@ -23,11 +20,14 @@ public class Account implements Parcelable {
         this.accountPassword = accountPassword;
     }
 
+    // Constructor without id specified
     public Account(String username, String accountName, String accountPassword) {
         this.username = username;
         this.accountName = accountName;
         this.accountPassword = accountPassword;
     }
+
+    // Constructor using Parcel
     protected Account(Parcel in) {
         this.id = in.readInt();
         this.accountName = in.readString();
@@ -35,6 +35,7 @@ public class Account implements Parcelable {
         this.accountPassword  = in.readString();
     }
 
+    // Getters and setters
     public int getId() {
         return this.id;
     }
@@ -46,7 +47,6 @@ public class Account implements Parcelable {
     public String getAccountName() {
         return this.accountName;
     }
-
 
     public String getAccountPassword() {
         return this.accountPassword;
@@ -64,12 +64,11 @@ public class Account implements Parcelable {
         this.accountName = accountName;
     }
 
-
     public void setAccountPassword(String accountPassword) {
         this.accountPassword = accountPassword;
     }
 
-
+    // Parcelable methods
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);
@@ -83,18 +82,22 @@ public class Account implements Parcelable {
         return 0;
     }
 
+    // Creator for parcelable
     public static final Creator<Account> CREATOR = new Creator<Account>() {
+        // Create new instance of Account
         @Override
         public Account createFromParcel(Parcel in) {
             return new Account(in);
         }
 
+        // Create new array of Account with parameter size
         @Override
         public Account[] newArray(int size) {
             return new Account[size];
         }
     };
 
+    // toString method
     @NonNull
     @Override
     public String toString() {

@@ -3,49 +3,31 @@ package edu.sjsu.android.finalproject6;
 import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.autofill.AutofillManager;
 import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.customview.widget.Openable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
-import java.security.PublicKey;
-import java.util.ArrayList;
-import java.util.Objects;
-
 public class MainActivity extends AppCompatActivity {
-
+    // NavController for the app
     private NavController navController;
-//    EditText accountName;
-//    EditText username;
-//    EditText password;
-//    EditText idInput;
-//    EditText searchText;
-//    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // Set up the navigation controller
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.fragment);
         assert navHostFragment != null;
@@ -54,13 +36,15 @@ public class MainActivity extends AppCompatActivity {
         // Set the start destination defined in nav graph as the top-level destination
         // i.e., there's no up button on the list fragment.
         NavigationUI.setupActionBarWithNavController(this, navController, (Openable) null);
-
+        // Check if the custom keyboard is enabled for autofill
         checkKeyboardPermission();
 
     }
 
+    // Method for checking custom keyboard permission
     InputMethodManager manager;
     private void checkKeyboardPermission() {
+        // Check if the custom keyboard is enabled, if not, show a dialog
         manager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         if (manager != null) {
             for (InputMethodInfo inputMethodInfo : manager.getEnabledInputMethodList()) {
@@ -73,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // Dialog to enable custom keyboard
     private void keyboardDialog() {
         new AlertDialog.Builder(this).setTitle("Enable custom keyboard to autofill username and passwords.")
                 .setMessage("View custom keyboard settings?")
@@ -84,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    // Method to create and navigate the options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -115,11 +101,8 @@ public class MainActivity extends AppCompatActivity {
             Intent delete = new Intent(Intent.ACTION_DELETE,
                     Uri.parse("package:" + getPackageName()));
             startActivity(delete);
-
-            //Log.d(">:{D :P XD :l :3 :( :)", "Uninstall clicked");
             return true;
         } else if (item.getItemId() == R.id.info) {
-            //Log.d("EEEEEEEEEEEEEEEEE", "Information clicked");
             NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.fragment);
             assert navHostFragment != null;
@@ -143,14 +126,7 @@ public class MainActivity extends AppCompatActivity {
             NavController navController = navHostFragment.getNavController();
             navController.navigate(R.id.goto_home);
             return true;
-        } else if (item.getItemId() == R.id.search) {
-            //TODO: Implement searching
-
-
-
-            return true;
-        }
-        else return super.onOptionsItemSelected(item);
+        } else return super.onOptionsItemSelected(item);
     }
 
     @Override

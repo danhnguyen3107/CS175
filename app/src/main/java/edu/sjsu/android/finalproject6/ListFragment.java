@@ -1,38 +1,33 @@
 package edu.sjsu.android.finalproject6;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import java.util.ArrayList;
 
 
 public class ListFragment extends Fragment {
     private ArrayList<Account> accountList;
-//    private MenuItem menuItem;
-//    private SearchView searchView;
 
-    public ListFragment() {
-    }
-
+    // onCreate method
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        DatabaseHelper db = new DatabaseHelper(getContext());
-        accountList = db.getAllAccounts();
+        // Get all accounts from the database
+        try (DatabaseHelper db = new DatabaseHelper(requireContext())) {
+            accountList = db.getAllAccounts();
+        } catch (Exception e) {
+            Log.wtf("ListFragment", e.getMessage());
+        }
 
     }
 
@@ -53,50 +48,36 @@ public class ListFragment extends Fragment {
         return view;
     }
 
+    // Method to navigate to the detail fragment
     public void onClick(int position) {
-        /*if (position == accountList.size() - 1) {
-            showWarning(position);
-        }
-        else {
-            goDetail(position);
-        }*/
         goDetail(position);
     }
 
+    // Uses the NavController to navigate to the detail fragment
     public void goDetail(int position){
         Account account = accountList.get(position);
         Bundle bundle = new Bundle();
 
-        bundle.putParcelable(getContext().getString(R.string.argument_key), account);
+        bundle.putParcelable(requireContext().getString(R.string.argument_key), account);
         NavController controller = NavHostFragment.findNavController(this);
         controller.navigate(R.id.list_to_detail, bundle);
     }
 
+    // Filter accounts based on search
     public void filterAccounts(String text){
-        DatabaseHelper db = new DatabaseHelper(getContext());
-        this.accountList = db.searchAccounts(text);
-        updateRecyclerView( accountList);
+        try (DatabaseHelper db = new DatabaseHelper(requireContext())) {
+            accountList = db.searchAccounts(text);
+            updateRecyclerView(accountList);
+        } catch (Exception e) {
+            Log.wtf("ListFragment", e.getMessage());
+        }
     }
 
+    // Method to update recycler view
     private void updateRecyclerView(ArrayList<Account> filteredList) {
         MyAdapter adapter = new MyAdapter(filteredList);
         adapter.setListener(this::onClick);
-        RecyclerView recyclerView = getView().findViewById(R.id.list); // Adjust ID as necessary
+        RecyclerView recyclerView = requireView().findViewById(R.id.list); // Adjust ID as necessary
         recyclerView.setAdapter(adapter);
-    }
-
-    public void showWarning(int position) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("Warning");
-        //builder.setMessage("Warning: ");
-        builder.setMessage("This section is under construction. Proceed?");
-        builder.setPositiveButton("Yes", (dialog, id) -> {
-            // When user selects yes
-            goDetail(position);
-        });
-        builder.setNegativeButton("No", (dialog, id) -> {
-            // Do nothing when user clicks No
-        });
-        builder.create().show();
     }
 }
