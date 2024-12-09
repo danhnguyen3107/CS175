@@ -1,6 +1,9 @@
 package edu.sjsu.android.finalproject6;
 
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import edu.sjsu.android.finalproject6.databinding.FragmentDetailBinding;
 
@@ -69,6 +73,9 @@ public class DetailFragment extends Fragment {
             }
         });
 
+        binding.name.setOnClickListener(v -> copyToClipboard(binding.name.getText().toString(), "Username copied to clipboard"));
+        binding.password.setOnClickListener(v -> copyToClipboard(binding.password.getText().toString(), "Password copied to clipboard"));
+
         return binding.getRoot();
     }
 
@@ -105,6 +112,14 @@ public class DetailFragment extends Fragment {
         } catch (Exception e) {
             Log.wtf("DetailFragment", e.getMessage());
         }
+    }
+
+
+    private void copyToClipboard(String text, String message) {
+        ClipboardManager clipboard = (ClipboardManager) requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("label", text);
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
     }
 
 }

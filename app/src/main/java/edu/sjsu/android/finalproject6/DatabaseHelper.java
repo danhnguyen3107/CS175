@@ -86,8 +86,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                Account account = new Account(cursor.getInt(0), cursor.getString(1),
-                        cursor.getString(2), cursor.getString(3));
+                Account account = new Account(cursor.getInt(0), cursor.getString(2),
+                        cursor.getString(1), cursor.getString(3));
                 accountList.add(account);
             } while (cursor.moveToNext());
         }
@@ -108,8 +108,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             do {
-                Account account = new Account(cursor.getInt(0), cursor.getString(1),
-                        cursor.getString(2), cursor.getString(3));
+                Account account = new Account(cursor.getInt(0), cursor.getString(2),
+                        cursor.getString(1), cursor.getString(3));
                 accountList.add(account);
             } while (cursor.moveToNext());
         }
