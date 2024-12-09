@@ -24,4 +24,8 @@
 <item
     android:id="@+id/unin"
     android:title="@string/uninstall"/>
+
+    <item
+        android:id="@+id/how_to_autofill"
+        android:title="@string/how_to_auto"/>
 </menu>

@@ -52,5 +52,15 @@
     <string name="usernameKeyboard">Username: %s</string>
     <string name="home">Home</string>
     <string name="toggle_password_visibility_desc">Toggle the password visibility</string>
+    <string name="how_to_auto">How to Autofill</string>
+    <string name="how_to_use_autofill">How to use Autofill</string>
+    <string name="step1_desc">Enable custom keyboard by using the menu dropdown and selecting the keyboard settings option. Then, enable the AccMan custom keyboard.</string>
+    <string name="step1_title">Step 1</string>
+    <string name="step2_desc">After enabling the custom keyboard, press the button next to the recents app button when on keyboard view to switch keyboards.</string>
+    <string name="step2_title">Step 2</string>
+    <string name="step3_desc">Select the AccMan keyboard.</string>
+    <string name="step3_title">Step 3</string>
+    <string name="step4_desc">Use the keyboard to autofill your account information. Just click on corresponding email and password to autofill</string>
+    <string name="step4_title">Step 4</string>
 
 </resources>

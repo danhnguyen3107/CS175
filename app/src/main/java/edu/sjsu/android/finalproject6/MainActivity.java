@@ -126,6 +126,13 @@ public class MainActivity extends AppCompatActivity {
             NavController navController = navHostFragment.getNavController();
             navController.navigate(R.id.goto_home);
             return true;
+        } else if (item.getItemId() == R.id.how_to_autofill) {
+            NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.fragment);
+            assert navHostFragment != null;
+            NavController navController = navHostFragment.getNavController();
+            navController.navigate(R.id.goto_how_to_autofill);
+            return true;
         } else return super.onOptionsItemSelected(item);
     }
 

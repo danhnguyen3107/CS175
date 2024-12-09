@@ -65,12 +65,17 @@
             app:destination="@id/detailFragment" />
     </fragment>
 
-</navigation>
+    <fragment
+        android:id="@+id/howtoAutofillFragment"
+        android:name="edu.sjsu.android.finalproject6.HowToAutofillFragment"
 
-<!--
-android:label="Account Profile"
-android:label="Account List"
-android:label="App Info"
-android:label="Edit Account"
-android:label="Add Account"
--->
+        tools:layout="@layout/fragment_how_to_autofill" >
+        <action
+            android:id="@+id/action_autoFillFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <action
+        android:id="@+id/goto_how_to_autofill"
+        app:destination="@id/howtoAutofillFragment" />
+
+</navigation>
