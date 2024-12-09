@@ -19,13 +19,12 @@
     android:id="@+id/info"
     android:title="@string/information"/>
 <item
+    android:id="@+id/how_to_autofill"
+    android:title="@string/how_to_auto"/>
+<item
     android:id="@+id/serv"
     android:title="@string/serv"/>
 <item
     android:id="@+id/unin"
     android:title="@string/uninstall"/>
-
-    <item
-        android:id="@+id/how_to_autofill"
-        android:title="@string/how_to_auto"/>
 </menu>
