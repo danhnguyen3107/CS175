@@ -20,7 +20,7 @@ Hardware Requirements:
 This application allows users to store login information and easily access them. It provides a way for users to store their login credentials easily. [Video Version of User Guide.](https://drive.google.com/file/d/1X3vmW-oG1sz1Lv5eFzXNDcU-NbZLC4Zn/view?usp=sharing)
 * Enabling Autofill
   * When starting the application, users can enable an autofill keyboard. Press yes on the dialog and enable AccMan as an on-screen keyboard.
-  * Additionally, users can access this option again from the menu
+  * Additionally, users can access this option again from the menu.
 * Adding Account
   * In the menu, users can click "Add an Account" to add a credential. To create one, they must fill in the Account Name, Username, and Password. Lastly, they can click the "ADD ACCOUNT" button to add their account. For security, users can toggle the visibility of the password.
 * Accessing an Account
@@ -30,7 +30,7 @@ This application allows users to store login information and easily access them.
   * From the accessing an account screen, users can edit an account. They simply change the information and save the changes for the edit.
 * Deleting an Account
   * From the accessing an account screen, users can press "Delete" button to delete the current account. It shows a popup and deletes the account if the user continues with it.
-* Searching for an Account.
+* Searching for an Account
   * From the home screen, users can search for a specific account. This filters the results to show account names matching the search.
 * Accessing Information Page
   * From the menu, users can access information about the app.
