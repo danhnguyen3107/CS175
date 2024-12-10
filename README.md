@@ -1,4 +1,8 @@
 # CS175
+### Team member:
+	Mark Nguyen
+	Shashhank Seethula
+  Timothy Nguyen
 
 # APK
 
