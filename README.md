@@ -11,12 +11,12 @@ https://drive.google.com/file/d/1dEgA2SIzhvhXODA0rqBDtGjzRmRhTwET/view?usp=shari
 https://docs.google.com/spreadsheets/d/1oyTDQ-3rGSpXlgWN_P9N_LeU9pCmwlYlwv9PX6nACSo/edit?usp=sharing
 
 # Final Report
-App Name: AccMan
-Group Members: Timothy Nguyen, Mark Nguyen, Shashhank Seethula
+App Name: AccMan <br>
+Group Members: Timothy Nguyen, Mark Nguyen, Shashhank Seethula <br>
 Hardware Requirements:
 * API 29
 
-User Guide:
+### User Guide:
 This application allows users to store login information and easily access them. It provides a way for users to store their login credentials easily. [Video Version of User Guide.](https://drive.google.com/file/d/1X3vmW-oG1sz1Lv5eFzXNDcU-NbZLC4Zn/view?usp=sharing)
 * Enabling Autofill
   * When starting the application, users can enable an autofill keyboard. Press yes on the dialog and enable AccMan as an on-screen keyboard.
