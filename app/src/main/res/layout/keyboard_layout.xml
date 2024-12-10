@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="#E0E0E0"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/password_manager"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="#000" />
+
+    <Button
+        android:id="@+id/switch_to_accounts"
+        style="@style/my_button.dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_account"
+        android:padding="10dp" />
+</LinearLayout>

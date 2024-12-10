@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/search"
+    app:showAsAction="ifRoom|collapseActionView"
+    android:icon="@android:drawable/ic_menu_search"
+    app:actionViewClass="androidx.appcompat.widget.SearchView"
+    android:title="@string/search"/>
+<item
+    android:id="@+id/home"
+    app:showAsAction="always"
+    android:icon="@drawable/home_icon"
+    android:title="@string/home"/>
+<item
+    android:id="@+id/add"
+    android:title="@string/add_account"/>
+<item
+    android:id="@+id/info"
+    android:title="@string/information"/>
+<item
+    android:id="@+id/how_to_autofill"
+    android:title="@string/how_to_auto"/>
+<item
+    android:id="@+id/serv"
+    android:title="@string/serv"/>
+<item
+    android:id="@+id/unin"
+    android:title="@string/uninstall"/>
+</menu>

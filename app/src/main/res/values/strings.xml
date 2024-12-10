@@ -1,3 +1,66 @@
 <resources>
-    <string name="app_name">FinalProject6</string>
+    <string name="app_name">AccMan</string>
+    <string name="temp">temporary</string>
+    <string name="argument_key">Account</string>
+
+    <string name="info"><b>Phone Number:</b></string>
+    <string name="tel_888_8888">tel:888-8888</string>
+
+    <string name="information">Information</string>
+    <string name="uninstall">Uninstall</string>
+
+    <string name="icon1">Account</string>
+
+    <string name="a1_email">amongAll@example.com</string>
+    <string name="a1_phone">123-4567</string>
+    <string name="a1_name">Alice</string>
+    <string name="a1_password">password</string>
+
+    <string name="a2_email">bigBoy@example.com</string>
+    <string name="a2_phone">321-7654</string>
+    <string name="a2_name">Bob</string>
+    <string name="a2_password">drowssap</string>
+
+    <string name="edit_account">Edit Account</string>
+    <string name="save_changes">Save Changes</string>
+
+    <string name="enter_accountName">Enter Account Name:</string>
+    <string name="enter_name">Enter username:</string>
+    <string name="enter_phone_number">Enter phone number:</string>
+    <string name="create_account">Add Account</string>
+    <string name="enter_password">Enter password:</string>
+    <string name="enter_new_password">Enter new password:</string>
+    <string name="add_account">Add Account</string>
+    <string name="accountName">Account Name:</string>
+    <string name="username">Username:</string>
+    <string name="phone">Phone:</string>
+    <string name="password">Password:</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="search">Search</string>
+
+    <string name="info_website_text"><b>Website:</b></string>
+    <string name="info_website">accman.com</string>
+    <string name="version_history"><b>Version History:</b></string>
+    <string name="v_1_0"><b>1.0:</b> Initial launch of app.</string>
+    <string name="serv">Keyboard Settings</string>
+    <string name="password_manager">Password Manager</string>
+    <string name="select_account">Select Account</string>
+    <string name="select_an_account">Select an Account</string>
+    <string name="back">Back</string>
+    <string name="passwordKeyboard">Password</string>
+    <string name="accountKeyboard">Account Name: %s</string>
+    <string name="usernameKeyboard">Username: %s</string>
+    <string name="home">Home</string>
+    <string name="toggle_password_visibility_desc">Toggle the password visibility</string>
+    <string name="how_to_auto">How to Autofill</string>
+    <string name="how_to_use_autofill">How to use Autofill</string>
+    <string name="step1_desc">Enable custom keyboard by using the menu dropdown and selecting the keyboard settings option. Then, enable the AccMan custom keyboard.</string>
+    <string name="step1_title">Step 1</string>
+    <string name="step2_desc">After enabling the custom keyboard, press the button next to the recents app button when on keyboard view to switch keyboards.</string>
+    <string name="step2_title">Step 2</string>
+    <string name="step3_desc">Select the AccMan keyboard.</string>
+    <string name="step3_title">Step 3</string>
+    <string name="step4_desc">Use the keyboard to autofill your account information. Just click on corresponding email and password to autofill</string>
+    <string name="step4_title">Step 4</string>
+
 </resources>
